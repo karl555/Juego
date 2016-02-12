@@ -8,40 +8,63 @@ function aleatorio(minimo, maximo)
 	return numero;
 }
 
+function ganaste()
+{
+alert("Ganaste!");
+}
+function perdiste()
+{
+alert("Perdiste!");
+}
+function empate()
+{
+alert("Empate");
+}
+
+
 alert("Bienvenido un buen juego de: \n Piedra, Papel, Tijera o Spock");
 juego();
 
-function juego() 
+function juego()
 {
-var piedra = 0;
-var papel = 1;
-var tijera = 2;
-var lagarto = 3;
-var spock = 4;
+
 var opciones = ["Piedra", "Papel", "Tijera", "Lagarto", "Spock"];
-var resultado = ["Ganaste!!!", "Perdiste!!!"];
 var opcionUsuario;
 var opcionMaquina = aleatorio(0,4);
 
 opcionUsuario = prompt("Elige una opción \n 0. Piedra \n 1. Papel \n 2. Tijera \n 3. Lagarto \n 4. Spock");
 
+if (opciones[opcionUsuario] == undefined)
+{
+alert("Elegiste mal!");
+juego();
+}
+
 alert("Elegiste\n" + opciones[opcionUsuario]);
 alert("La Máquina eligió\n" + opciones[opcionMaquina]);
 
-if (opciones[opcionUsuario] == opciones[0])
+if (opcionUsuario == 1)
 {
-	if (opciones[opcionMaquina] == opciones[2],[3])
+	if (opcionMaquina == 0)
 	{
-		alert("Ganaste!");
+		ganaste();
 	}
-	else if (opciones[opcionMaquina] == opciones[1],[4])
-	{
-		alert("Perdiste");
-	}
-	else if (opciones[opcionUsuario] == opciones[opcionMaquina])
-	{
-        alert("Empate!!!");
-	}
+	else if (opcionMaquina == 2)
+   {
+      perdiste();
+   }
+   else if (opcionMaquina == 3)
+   {
+      perdiste();
+   }
+   else if (opcionMaquina == 4)
+   {
+      ganaste();
+   }
+   else if ( opcionMaquina == opcionUsuario)
+{
+      empate();
 }
 }
 
+}

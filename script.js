@@ -43,13 +43,37 @@ juego();
 alert("Elegiste\n" + opciones[opcionUsuario]);
 alert("La Máquina eligió\n" + opciones[opcionMaquina]);
 
-if (opcionUsuario == 1)
+if ( opcionMaquina == opcionUsuario)
+   {
+      empate();
+   }
+
+if (opcionUsuario == 0)
 {
-	if (opcionMaquina == 0)
+	if (opcionMaquina == 1)
 	{
-		ganaste();
+		perdiste();
 	}
 	else if (opcionMaquina == 2)
+   {
+      ganaste();
+   }
+   else if (opcionMaquina == 3)
+   {
+      ganaste();
+   }
+   else if (opcionMaquina == 4)
+   {
+      perdiste();
+   }
+}
+ else if (opcionUsuario == 1)
+   {
+   if (opcionMaquina == 0)
+   {
+      ganaste();
+   }
+   else if (opcionMaquina == 2)
    {
       perdiste();
    }
@@ -61,10 +85,6 @@ if (opcionUsuario == 1)
    {
       ganaste();
    }
-   else if ( opcionMaquina == opcionUsuario)
-{
-      empate();
 }
 }
 
-}
